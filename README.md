@@ -121,5 +121,3 @@ so please check [this file](https://github.com/martindalec/material-datepicker/b
 ```
 <mat-datepicker type="time" clockStep="5" #timeStart></mat-datepicker>
 ```
-
-Enjoy!
