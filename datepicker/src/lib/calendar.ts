@@ -412,7 +412,7 @@ export class MatCalendar<D> implements AfterContentInit, AfterViewChecked, OnCha
 
   _toggleAmPm(am): void {
     this._isAm = !this._isAm;
-    const date = this._dateAdapter.addCalendarHours(this.activeDate, this._isAm ? 12 : -12);
+    const date = this._dateAdapter.addCalendarHours(this.activeDate, this._isAm ? -12 : 12);
     if (this._dateFilterForViews(date, 'minute')) {
       this.selected = date;
     }
