@@ -34,13 +34,37 @@ and the `input[matDatepicker]` has the _output_:
 
 ## Installation
 
-As usual run `yarn add @coachcare/datepicker` or `npm install @coachcare/datepicker`.  
+As usual run `npm install @martindalec/datepicker`.  
 This module requires `moment` and `moment-timezome` for the MomentDateAdapter.
 
 Now add the modules to your Angular Module:
 
 ```
-import { MatDatepickerModule, MatMomentDateModule } from '@coachcare/datepicker';
+import {
+    MatDatepickerModule, MatMomentDateModule, MAT_DATE_FORMATS,
+    MAT_DATE_LOCALE, MomentDateModule, MomentDateAdapter, DateAdapter,
+    MatDateFormats
+} from '@martindalec/datepicker';
+
+/* Format as you desire, based on moment.js format strings */
+export const MaterialDateFormats: MatDateFormats = {
+    parse: {
+        date: 'M/D/YYYY',
+        datetime: 'M/D/YYYY hh:mm A',
+        time: 'hh:mm A'
+    },
+    display: {
+        date: 'MMMM/D/YYYY',
+        datetime: 'M/D/YYYY hh:mm A',
+        time: 'hh:mm A',
+        dateA11yLabel: 'LL',
+        monthDayLabel: 'MMMM DD, YYYY',
+        monthDayA11yLabel: 'MMMM D',
+        monthYearLabel: 'MMMM YYYY',
+        monthYearA11yLabel: 'MMMM YYYY',
+        timeLabel: 'HH:mm'
+    },
+};
 
 @NgModule({
   imports: [
@@ -48,7 +72,23 @@ import { MatDatepickerModule, MatMomentDateModule } from '@coachcare/datepicker'
     MatMomentDateModule,
     ...
   ],
-  ...
+  providers: [
+    ...,
+    {
+        provide: MAT_DATE_LOCALE,
+        useValue: 'en'
+    },
+    {
+        provide: DateAdapter,
+        useClass: MomentDateAdapter,
+        deps: [MAT_DATE_LOCALE]
+    },
+    {
+        provide: MAT_DATE_FORMATS,
+        useValue: MaterialDateFormats
+    },
+    ...
+  ]
 })
 export class AppModule {}
 ```
@@ -57,43 +97,10 @@ export class AppModule {}
 but it requires the providers given by `MatMomentDateModule`,  
 so it's recommended to be imported in your root Module.
 
-## Styling
-
-This module supports the Angular Material prebuilt themes that can be included in `angular.json`:
-
-```
-"styles": [
-  "node_modules/@coachcare/datepicker/prebuilt-themes/indigo-pink.css",
-  ...
-],
-```
-
-available themes are `deeppurple-amber`, `indigo-pink`, `pink-bluegrey` and `purple-green`.
-
-You can use your customized Material Theme as usual:
-
-```
-@import '~@coachcare/datepicker/theming';
-
-@include mat-datepicker-theme($theme);
-```
-
-Also, the primary color can be customized with CSS variables. The required ones are:
-
-```
-body {
-  --bg-dialog: white;
-  --primary: rgba(73, 200, 242, 1);
-  --primary-contrast: #fff;
-  --primary-a60: rgba(73, 200, 242, 0.6);
-  --primary-a80: rgba(73, 200, 242, 0.8);
-}
-```
-
 ## Date Formats Customization
 
 This fork uses an extended set of DateFormats,  
-so please check [this file](https://github.com/selvera/npm-datepicker/blob/master/datepicker/src/lib/moment-adapter/moment-date-formats.ts#L11) if you're building your own.
+so please check [this file](https://github.com/martindalec/material-datepicker/blob/master/datepicker/src/lib/moment-adapter/moment-date-formats.ts#L11) if you're building your own.
 
 ## Usage Examples
 
@@ -114,10 +121,5 @@ so please check [this file](https://github.com/selvera/npm-datepicker/blob/maste
 ```
 <mat-datepicker type="time" clockStep="5" #timeStart></mat-datepicker>
 ```
-
-## Contribute
-
-Feedback and suggestions are welcome, also gratitude demonstrations :)
-https://www.paypal.me/mateotp
 
 Enjoy!
