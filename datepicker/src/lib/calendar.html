@@ -14,7 +14,7 @@
     [@controlActive]="view == 'month' || view == 'year' ? 'active' : ''"
     [attr.aria-label]="_intl.switchToMonthViewLabel"
     (click)="changeView('month')">
-      <span class="mat-calendar-header-date-dayname">{{ _dayButtonText }}, </span>
+      <span class="mat-calendar-header-date-dayname">{{ _dayButtonText }} </span>
       <span class="mat-calendar-header-date-monthday">{{ _monthdayButtonText }}</span>
     </button>
   </div>
