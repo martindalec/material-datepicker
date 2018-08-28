@@ -2,23 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-<a name="0.9.13"></a>
-## [0.9.13](https://github.com/martindalec/material-datepicker/compare/v0.9.12...v0.9.13) (2018-08-28)
-
-
-
-<a name="0.9.12"></a>
-## [0.9.12](https://github.com/martindalec/material-datepicker/compare/v0.9.14...v0.9.12) (2018-08-28)
-
-
-
-<a name="0.9.11"></a>
+<a name="0.9.14"></a>
 
 ## [0.9.11](https://github.com/martindalec/material-datepicker/compare/v0.9.9...v0.9.11) (2018-08-28)
 
 ### Changes
 
 - Combining AM / PM toggle into single button
+- Fixing Changelog and ReadMe
 
 <a name="0.9.5"></a>
 
