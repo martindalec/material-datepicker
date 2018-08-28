@@ -411,12 +411,18 @@ export class MatCalendar<D> implements AfterContentInit, AfterViewChecked, OnCha
   }
 
   _toggleAmPm(am): void {
-    if (this._isAm !== am) {
-      const date = this._dateAdapter.addCalendarHours(this.activeDate, this._isAm ? 12 : -12);
-      if (this._dateFilterForViews(date, 'minute')) {
-        this.selected = date;
-      }
+    this._isAm = !this._isAm;
+    const date = this._dateAdapter.addCalendarHours(this.activeDate, this._isAm ? 12 : -12);
+    if (this._dateFilterForViews(date, 'minute')) {
+      this.selected = date;
     }
+
+    // if (this._isAm !== am) {
+    //   const date = this._dateAdapter.addCalendarHours(this.activeDate, this._isAm ? 12 : -12);
+    //   if (this._dateFilterForViews(date, 'minute')) {
+    //     this.selected = date;
+    //   }
+    // }
   }
 
   /** Whether the previous period button is enabled. */
