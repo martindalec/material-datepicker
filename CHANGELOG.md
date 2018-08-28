@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.14"></a>
+## [0.9.14](https://github.com/martindalec/material-datepicker/compare/v0.9.11...v0.9.14) (2018-08-28)
+
+
+
 <a name="0.9.11"></a>
 ## [0.9.11](https://github.com/martindalec/material-datepicker/compare/v0.9.9...v0.9.11) (2018-08-28)
 
