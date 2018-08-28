@@ -1,4 +1,4 @@
-# Material DatePicker by CoachCare
+# Material DatePicker based on Material DatePicker by CoachCare
 
 Fork of the official Material Datepicker for Angular v6 with timepicker support.
 
