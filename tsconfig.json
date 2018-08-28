@@ -17,10 +17,10 @@
       "dom"
     ],
     "paths": {
-      "@coachcare/datepicker": [
+      "@martindalec/datepicker": [
         "./datepicker/src/lib/"
       ],
-      "@coachcare/datepicker/*": [
+      "@martindalec/datepicker/*": [
         "./datepicker/src/lib/*"
       ]
     }

@@ -198,9 +198,10 @@ export class MatCalendar<D> implements AfterContentInit, AfterViewChecked, OnCha
     this._yearButtonText = this._dateAdapter.getYear(this.activeDate).toString();
     this._monthdayButtonText = this._dateAdapter.format(
       this.activeDate,
-      this._dateFormats.display.monthDayLabel
+      'MMM DD, YYYY'
+      //this._dateFormats.display.monthDayLabel
     );
-    this._dayButtonText = this._dateAdapter.getDayOfWeekNames('short')[day];
+    this._dayButtonText = this._dateAdapter.getDayOfWeekNames('long')[day];
     this._hourButtonText = hours.toString();
     this._minuteButtonText = ('00' + minutes).slice(-2);
 
