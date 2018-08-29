@@ -22,16 +22,16 @@
   <div class="mat-calendar-header-time">
     <div class="mat-calendar-header-time-hour">
         <button class="mat-calendar-control"
-        [class.mat-calendar-control-active]="true"
-        [@controlActive]="'active'"
+        [class.mat-calendar-control-active]="view == 'clock' && _hourView"
+        [@controlActive]="view == 'clock' && _hourView ? 'active' : ''"
         [attr.aria-label]="_intl.switchToHourViewLabel"
         (click)="_showHourView()">
           {{ _hourButtonText }}
         </button>
         <span>:</span>
         <button class="mat-calendar-control"
-        [class.mat-calendar-control-active]="true"
-        [@controlActive]="'active'"
+        [class.mat-calendar-control-active]="view == 'clock' && !_hourView"
+        [@controlActive]="view == 'clock' && !_hourView ? 'active' : ''"
         [attr.aria-label]="_intl.switchToMinuteViewLabel"
         (click)="_showMinuteView()">
           {{ _minuteButtonText }}
@@ -54,8 +54,8 @@
     </div>
     <div class="mat-calendar-header-time-ampm" *ngIf="twelveHour">
       <button class="mat-calendar-control"
-      [class.mat-calendar-control-active]="true"
-      [@controlActive]="'active'"
+      [class.mat-calendar-control-active]="view == 'clock'"
+      [@controlActive]="view == 'clock' ? 'active' : ''"
       [attr.aria-label]="_intl.setToAMLabel"
       (click)="_toggleAmPm(true)">
         {{_isAm ? 'AM' : 'PM'}}
