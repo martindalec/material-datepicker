@@ -16,8 +16,8 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "@angular/cdk": "^6.0.0",
-    "@angular/material": "^6.0.0",
+    "@angular/cdk": "7.3.5",
+    "@angular/material": "7.3.5",
     "moment": "*",
     "moment-timezone": "*"
   },
