@@ -97,6 +97,40 @@ export class AppModule {}
 but it requires the providers given by `MatMomentDateModule`,  
 so it's recommended to be imported in your root Module.
 
+## Styling
+
+This module supports the Angular Material prebuilt themes that can be included in `angular.json`:
+
+```
+"styles": [
+  "node_modules/@martindalec/datepicker/prebuilt-themes/indigo-pink.css",
+  ...
+],
+```
+
+available themes are `deeppurple-amber`, `indigo-pink`, `pink-bluegrey` and `purple-green`.
+
+You can use your customized Material Theme as usual:
+
+```
+@import '~@martindalec/datepicker/theming';
+
+@include mat-datepicker-theme($theme);
+```
+
+Also, the primary color can be customized with CSS variables. The required ones are:
+
+```
+body {
+  --bg-dialog: white;
+  --primary: rgba(73, 200, 242, 1);
+  --primary-contrast: #fff;
+  --primary-a60: rgba(73, 200, 242, 0.6);
+  --primary-a80: rgba(73, 200, 242, 0.8);
+}
+```
+
+
 ## Date Formats Customization
 
 This fork uses an extended set of DateFormats,  
