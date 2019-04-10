@@ -1,7 +1,7 @@
 <div [class]="'mat-calendar-header mat-calendar-type-' + type">
 
   <div class="mat-calendar-header-date">
-    <button class="mat-calendar-header-date-year mat-calendar-control"
+    <button mat-button class="mat-calendar-header-date-year mat-calendar-control"
     [class.mat-calendar-control-active]="view == 'years'"
     [@controlActive]="view == 'years' ? 'active' : ''"
     [attr.aria-label]="_intl.switchToYearViewLabel"
@@ -9,7 +9,7 @@
       {{ _yearButtonText }}
     </button>
 
-    <button class="mat-calendar-header-date-month mat-calendar-control"
+    <button mat-button class="mat-calendar-header-date-month mat-calendar-control"
     [class.mat-calendar-control-active]="view == 'month' || view == 'year'"
     [@controlActive]="view == 'month' || view == 'year' ? 'active' : ''"
     [attr.aria-label]="_intl.switchToMonthViewLabel"
@@ -86,7 +86,7 @@
       [attr.aria-label]="_prevButtonLabel">
     </button>
 
-    <button class="mat-calendar-heading-period mat-calendar-control mat-calendar-control-active"
+    <button mat-button class="mat-calendar-heading-period mat-calendar-control mat-calendar-control-active"
     [@slideCalendar]="_animationDir" (@slideCalendar.done)="_animationDir = ''"
     (click)="_currentPeriodClicked()"
     [attr.aria-label]="_periodButtonLabel">
