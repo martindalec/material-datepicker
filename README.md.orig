@@ -103,7 +103,11 @@ This module supports the Angular Material prebuilt themes that can be included i
 
 ```
 "styles": [
-  "node_modules/@martindalec/datepicker/prebuilt-themes/indigo-pink.css",
+<<<<<<< HEAD
+  "node_modules/@martindalec/datepicker/themes/indigo-pink.scss",
+=======
+  "node_modules/@martindalec/datepicker/themes/indigo-pink.css",
+>>>>>>> c0301535159795ca90ea0b4d84401372648db59a
   ...
 ],
 ```
