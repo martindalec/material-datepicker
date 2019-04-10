@@ -103,7 +103,7 @@ This module supports the Angular Material prebuilt themes that can be included i
 
 ```
 "styles": [
-  "node_modules/@martindalec/datepicker/prebuilt-themes/indigo-pink.css",
+  "node_modules/@martindalec/datepicker/themes/indigo-pink.scss",
   ...
 ],
 ```
@@ -129,7 +129,6 @@ body {
   --primary-a80: rgba(73, 200, 242, 0.8);
 }
 ```
-
 
 ## Date Formats Customization
 

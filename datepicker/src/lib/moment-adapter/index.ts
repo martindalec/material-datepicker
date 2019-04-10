@@ -13,6 +13,7 @@ import { MAT_MOMENT_DATE_FORMATS } from './moment-date-formats';
 
 export * from './moment-date-adapter';
 export * from './moment-date-formats';
+export { DateAdapter, MatDateFormats, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '../core/index';
 
 @NgModule({
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] }]
