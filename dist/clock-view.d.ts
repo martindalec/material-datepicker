@@ -18,15 +18,19 @@ export declare class MatClockView<D> implements AfterContentInit {
     /**
      * The time to display in this clock view. (the rest is ignored)
      */
-    activeDate: D;
+    get activeDate(): D;
+    set activeDate(value: D);
     private _activeDate;
-    selected: D | null;
+    get selected(): D | null;
+    set selected(value: D | null);
     private _selected;
     /** The minimum selectable date. */
-    minDate: D | null;
+    get minDate(): D | null;
+    set minDate(value: D | null);
     private _minDate;
     /** The maximum selectable date. */
-    maxDate: D | null;
+    get maxDate(): D | null;
+    set maxDate(value: D | null);
     private _maxDate;
     dateFilter: (date: D, unit?: string) => boolean;
     clockStep: number;
@@ -42,7 +46,7 @@ export declare class MatClockView<D> implements AfterContentInit {
     _anteMeridian: boolean;
     private mouseMoveListener;
     private mouseUpListener;
-    readonly _hand: any;
+    get _hand(): any;
     constructor(_changeDetectorRef: ChangeDetectorRef, _element: ElementRef, _dateAdapter: DateAdapter<D>, _dateFormats: MatDateFormats);
     ngAfterContentInit(): void;
     _handleMousedown(event: any): void;

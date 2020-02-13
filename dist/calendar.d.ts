@@ -40,7 +40,8 @@ export declare class MatCalendar<D> implements AfterContentInit, AfterViewChecke
      */
     private _moveFocusOnNextTick;
     /** A date representing the period (month or year) to start the calendar in. */
-    startAt: D | null;
+    get startAt(): D | null;
+    set startAt(value: D | null);
     private _startAt;
     /** The type of value handled by the calendar. */
     type: MatCalendarType;
@@ -49,13 +50,16 @@ export declare class MatCalendar<D> implements AfterContentInit, AfterViewChecke
     /** Current calendar view */
     view: MatCalendarView;
     /** The currently selected date. */
-    selected: D | null;
+    get selected(): D | null;
+    set selected(value: D | null);
     private _selected;
     /** The minimum selectable date. */
-    minDate: D | null;
+    get minDate(): D | null;
+    set minDate(value: D | null);
     private _minDate;
     /** The maximum selectable date. */
-    maxDate: D | null;
+    get maxDate(): D | null;
+    set maxDate(value: D | null);
     private _maxDate;
     /** A function used to filter which dates are selectable. */
     dateFilter: (date: D, unit?: string) => boolean;
@@ -81,10 +85,12 @@ export declare class MatCalendar<D> implements AfterContentInit, AfterViewChecke
      * The current active date. This determines which time period is shown and which date is
      * highlighted when using keyboard navigation.
      */
-    activeDate: D;
+    get activeDate(): D;
+    set activeDate(value: D);
     private _clampedActiveDate;
     /** Whether the calendar is in month view. */
-    currentView: MatCalendarView;
+    get currentView(): MatCalendarView;
+    set currentView(value: MatCalendarView);
     private _currentView;
     /**
      * Emits whenever there is a state change that the header may need to respond to.

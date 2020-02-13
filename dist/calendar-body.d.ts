@@ -52,7 +52,7 @@ export declare class MatCalendarBody {
     constructor(_elementRef: ElementRef, _ngZone: NgZone);
     _cellClicked(cell: MatCalendarCell): void;
     /** The number of blank cells to put at the beginning for the first row. */
-    readonly _firstRowOffset: number;
+    get _firstRowOffset(): number;
     _isActiveCell(rowIndex: number, colIndex: number): boolean;
     /** Focuses the active cell after the microtask queue is empty. */
     _focusActiveCell(): void;

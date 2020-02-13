@@ -24,5 +24,8 @@
         "./datepicker/src/lib/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   }
 }

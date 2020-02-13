@@ -18,7 +18,8 @@ export declare class MatDatepickerToggle<D> implements AfterContentInit, OnChang
     /** Datepicker instance that the button will toggle. */
     datepicker: MatDatepicker<D>;
     /** Whether the toggle button is disabled. */
-    disabled: boolean;
+    get disabled(): boolean;
+    set disabled(value: boolean);
     private _disabled;
     /** Custom icon set by the consumer. */
     _customIcon: MatDatepickerToggleIcon;

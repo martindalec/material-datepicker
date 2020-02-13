@@ -1,5 +1,5 @@
 import { Platform, PlatformModule } from '@angular/cdk/platform';
-import { InjectionToken, inject, LOCALE_ID, Injectable, Optional, Inject, NgModule, EventEmitter, Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, defineInjectable, NgZone, ViewChild, ViewContainerRef, forwardRef, Directive, ContentChild } from '@angular/core';
+import { InjectionToken, inject, LOCALE_ID, Injectable, Optional, Inject, NgModule, EventEmitter, Component, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, ɵɵdefineInjectable, NgZone, ViewChild, ViewContainerRef, forwardRef, Directive, ContentChild } from '@angular/core';
 import { Subject, fromEvent, of, Subscription, merge } from 'rxjs';
 import * as momentNs from 'moment-timezone';
 import { A11yModule } from '@angular/cdk/a11y';
@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { trigger, transition, animate, keyframes, style, state, group, query, animateChild } from '@angular/animations';
-import { LEFT_ARROW, RIGHT_ARROW, UP_ARROW, DOWN_ARROW, HOME, END, PAGE_UP, PAGE_DOWN, ENTER, ESCAPE } from '@angular/cdk/keycodes';
+import { ENTER, PAGE_DOWN, PAGE_UP, END, HOME, DOWN_ARROW, UP_ARROW, RIGHT_ARROW, LEFT_ARROW, ESCAPE } from '@angular/cdk/keycodes';
 import { Directionality } from '@angular/cdk/bidi';
 import { take, sampleTime, mergeMap, filter } from 'rxjs/operators';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -20,7 +20,8 @@ import { MatFormField } from '@angular/material/form-field';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: core/date-adapter.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * InjectionToken for datepicker that can be used to override default locale code.
@@ -164,17 +165,268 @@ class DateAdapter {
         return date;
     }
 }
+if (false) {
+    /**
+     * The locale to use for all dates.
+     * @type {?}
+     * @protected
+     */
+    DateAdapter.prototype.locale;
+    /**
+     * @type {?}
+     * @protected
+     */
+    DateAdapter.prototype._localeChanges;
+    /**
+     * Gets the year component of the given date.
+     * @abstract
+     * @param {?} date The date to extract the year from.
+     * @return {?} The year component.
+     */
+    DateAdapter.prototype.getYear = function (date) { };
+    /**
+     * Gets the month component of the given date.
+     * @abstract
+     * @param {?} date The date to extract the month from.
+     * @return {?} The month component (0-indexed, 0 = January).
+     */
+    DateAdapter.prototype.getMonth = function (date) { };
+    /**
+     * @abstract
+     * @param {?} date
+     * @return {?}
+     */
+    DateAdapter.prototype.getHours = function (date) { };
+    /**
+     * @abstract
+     * @param {?} date
+     * @param {?} value
+     * @return {?}
+     */
+    DateAdapter.prototype.setHours = function (date, value) { };
+    /**
+     * @abstract
+     * @param {?} date
+     * @return {?}
+     */
+    DateAdapter.prototype.getMinutes = function (date) { };
+    /**
+     * @abstract
+     * @param {?} date
+     * @param {?} value
+     * @return {?}
+     */
+    DateAdapter.prototype.setMinutes = function (date, value) { };
+    /**
+     * @abstract
+     * @param {?} date
+     * @param {?} value
+     * @param {?=} ms
+     * @return {?}
+     */
+    DateAdapter.prototype.setSeconds = function (date, value, ms) { };
+    /**
+     * Gets the date of the month component of the given date.
+     * @abstract
+     * @param {?} date The date to extract the date of the month from.
+     * @return {?} The month component (1-indexed, 1 = first of month).
+     */
+    DateAdapter.prototype.getDate = function (date) { };
+    /**
+     * Gets the day of the week component of the given date.
+     * @abstract
+     * @param {?} date The date to extract the day of the week from.
+     * @return {?} The month component (0-indexed, 0 = Sunday).
+     */
+    DateAdapter.prototype.getDayOfWeek = function (date) { };
+    /**
+     * Gets a list of names for the months.
+     * @abstract
+     * @param {?} style The naming style (e.g. long = 'January', short = 'Jan', narrow = 'J').
+     * @return {?} An ordered list of all month names, starting with January.
+     */
+    DateAdapter.prototype.getMonthNames = function (style) { };
+    /**
+     * Gets a list of names for the dates of the month.
+     * @abstract
+     * @return {?} An ordered list of all date of the month names, starting with '1'.
+     */
+    DateAdapter.prototype.getDateNames = function () { };
+    /**
+     * @abstract
+     * @return {?}
+     */
+    DateAdapter.prototype.getHourNames = function () { };
+    /**
+     * @abstract
+     * @return {?}
+     */
+    DateAdapter.prototype.getMinuteNames = function () { };
+    /**
+     * Gets a list of names for the days of the week.
+     * @abstract
+     * @param {?} style The naming style (e.g. long = 'Sunday', short = 'Sun', narrow = 'S').
+     * @return {?} An ordered list of all weekday names, starting with Sunday.
+     */
+    DateAdapter.prototype.getDayOfWeekNames = function (style) { };
+    /**
+     * Gets the name for the year of the given date.
+     * @abstract
+     * @param {?} date The date to get the year name for.
+     * @return {?} The name of the given year (e.g. '2017').
+     */
+    DateAdapter.prototype.getYearName = function (date) { };
+    /**
+     * Gets the first day of the week.
+     * @abstract
+     * @return {?} The first day of the week (0-indexed, 0 = Sunday).
+     */
+    DateAdapter.prototype.getFirstDayOfWeek = function () { };
+    /**
+     * Gets the number of days in the month of the given date.
+     * @abstract
+     * @param {?} date The date whose month should be checked.
+     * @return {?} The number of days in the month of the given date.
+     */
+    DateAdapter.prototype.getNumDaysInMonth = function (date) { };
+    /**
+     * Clones the given date.
+     * @abstract
+     * @param {?} date The date to clone
+     * @return {?} A new date equal to the given date.
+     */
+    DateAdapter.prototype.clone = function (date) { };
+    /**
+     * Creates a date with the given year, month, and date. Does not allow over/under-flow of the
+     * month and date.
+     * @abstract
+     * @param {?} year The full year of the date. (e.g. 89 means the year 89, not the year 1989).
+     * @param {?} month The month of the date (0-indexed, 0 = January). Must be an integer 0 - 11.
+     * @param {?} date The date of month of the date. Must be an integer 1 - length of the given month.
+     * @param {?=} hours
+     * @param {?=} minutes
+     * @return {?} The new date, or null if invalid.
+     */
+    DateAdapter.prototype.createDate = function (year, month, date, hours, minutes) { };
+    /**
+     * Gets today's date.
+     * @abstract
+     * @return {?} Today's date.
+     */
+    DateAdapter.prototype.today = function () { };
+    /**
+     * Parses a date from a user-provided value.
+     * @abstract
+     * @param {?} value The value to parse.
+     * @param {?} parseFormat The expected format of the value being parsed
+     *     (type is implementation-dependent).
+     * @return {?} The parsed date.
+     */
+    DateAdapter.prototype.parse = function (value, parseFormat) { };
+    /**
+     * Formats a date as a string according to the given format.
+     * @abstract
+     * @param {?} date The value to format.
+     * @param {?} displayFormat The format to use to display the date as a string.
+     * @return {?} The formatted date string.
+     */
+    DateAdapter.prototype.format = function (date, displayFormat) { };
+    /**
+     * Adds the given number of years to the date. Years are counted as if flipping 12 pages on the
+     * calendar for each year and then finding the closest date in the new month. For example when
+     * adding 1 year to Feb 29, 2016, the resulting date will be Feb 28, 2017.
+     * @abstract
+     * @param {?} date The date to add years to.
+     * @param {?} years The number of years to add (may be negative).
+     * @return {?} A new date equal to the given one with the specified number of years added.
+     */
+    DateAdapter.prototype.addCalendarYears = function (date, years) { };
+    /**
+     * Adds the given number of months to the date. Months are counted as if flipping a page on the
+     * calendar for each month and then finding the closest date in the new month. For example when
+     * adding 1 month to Jan 31, 2017, the resulting date will be Feb 28, 2017.
+     * @abstract
+     * @param {?} date The date to add months to.
+     * @param {?} months The number of months to add (may be negative).
+     * @return {?} A new date equal to the given one with the specified number of months added.
+     */
+    DateAdapter.prototype.addCalendarMonths = function (date, months) { };
+    /**
+     * Adds the given number of days to the date. Days are counted as if moving one cell on the
+     * calendar for each day.
+     * @abstract
+     * @param {?} date The date to add days to.
+     * @param {?} days The number of days to add (may be negative).
+     * @return {?} A new date equal to the given one with the specified number of days added.
+     */
+    DateAdapter.prototype.addCalendarDays = function (date, days) { };
+    /**
+     * @abstract
+     * @param {?} date
+     * @param {?} hours
+     * @return {?}
+     */
+    DateAdapter.prototype.addCalendarHours = function (date, hours) { };
+    /**
+     * @abstract
+     * @param {?} date
+     * @param {?} minutes
+     * @return {?}
+     */
+    DateAdapter.prototype.addCalendarMinutes = function (date, minutes) { };
+    /**
+     * Gets the RFC 3339 compatible string (https://tools.ietf.org/html/rfc3339) for the given date.
+     * This method is used to generate date strings that are compatible with native HTML attributes
+     * such as the `min` or `max` attribute of an `<input>`.
+     * @abstract
+     * @param {?} date The date to get the ISO date string for.
+     * @return {?} The ISO date string date string.
+     */
+    DateAdapter.prototype.toIso8601 = function (date) { };
+    /**
+     * Checks whether the given object is considered a date instance by this DateAdapter.
+     * @abstract
+     * @param {?} obj The object to check
+     * @return {?} Whether the object is a date instance.
+     */
+    DateAdapter.prototype.isDateInstance = function (obj) { };
+    /**
+     * Checks whether the given date is valid.
+     * @abstract
+     * @param {?} date The date to check.
+     * @return {?} Whether the date is valid.
+     */
+    DateAdapter.prototype.isValid = function (date) { };
+    /**
+     * Gets date instance that is not valid.
+     * @abstract
+     * @return {?} An invalid date.
+     */
+    DateAdapter.prototype.invalid = function () { };
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: core/date-formats.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function MatDateFormats() { }
+if (false) {
+    /** @type {?} */
+    MatDateFormats.prototype.parse;
+    /** @type {?} */
+    MatDateFormats.prototype.display;
+}
 /** @type {?} */
 const MAT_DATE_FORMATS = new InjectionToken('mat-date-formats');
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: core/native-date-adapter.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 // TODO(mmalerba): Remove when we no longer support safari 9.
 /**
@@ -518,7 +770,7 @@ class NativeDateAdapter extends DateAdapter {
                 date = this.clone(date);
                 date.setFullYear(Math.max(1, Math.min(9999, date.getFullYear())));
             }
-            displayFormat = Object.assign({}, displayFormat, { timeZone: 'utc' });
+            displayFormat = Object.assign(Object.assign({}, displayFormat), { timeZone: 'utc' });
             /** @type {?} */
             const dtf = new Intl.DateTimeFormat(this.locale, displayFormat);
             return this._stripDirectionalityCharacters(this._format(dtf, date));
@@ -691,10 +943,32 @@ NativeDateAdapter.ctorParameters = () => [
     { type: Platform },
     { type: String, decorators: [{ type: Optional }, { type: Inject, args: [MAT_DATE_LOCALE,] }] }
 ];
+if (false) {
+    /**
+     * Whether to clamp the date between 1 and 9999 to avoid IE and Edge errors.
+     * @type {?}
+     * @private
+     */
+    NativeDateAdapter.prototype._clampDate;
+    /**
+     * Whether to use `timeZone: 'utc'` with `Intl.DateTimeFormat` when formatting dates.
+     * Without this `Intl.DateTimeFormat` sometimes chooses the wrong timeZone, which can throw off
+     * the result. (e.g. in the en-US locale `new Date(1800, 7, 14).toLocaleDateString()`
+     * will produce `'8/13/1800'`.
+     *
+     * TODO(mmalerba): drop this variable. It's not being used in the code right now. We're now
+     * getting the string representation of a Date object from it's utc representation. We're keeping
+     * it here for sometime, just for precaution, in case we decide to revert some of these changes
+     * though.
+     * @type {?}
+     */
+    NativeDateAdapter.prototype.useUtcForDisplay;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: core/native-date-formats.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @license
@@ -731,7 +1005,8 @@ const MAT_NATIVE_DATE_FORMATS = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: core/index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class NativeDateModule {
 }
@@ -753,7 +1028,8 @@ MatNativeDateModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: moment-adapter/moment-date-adapter.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const moment = momentNs;
@@ -1098,10 +1374,18 @@ MomentDateAdapter.decorators = [
 MomentDateAdapter.ctorParameters = () => [
     { type: String, decorators: [{ type: Optional }, { type: Inject, args: [MAT_DATE_LOCALE,] }] }
 ];
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MomentDateAdapter.prototype._localeData;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: moment-adapter/moment-date-formats.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @license
@@ -1132,7 +1416,8 @@ const MAT_MOMENT_DATE_FORMATS = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: moment-adapter/index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class MomentDateModule {
 }
@@ -1153,7 +1438,8 @@ MatMomentDateModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: datepicker-errors.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @license
@@ -1175,7 +1461,8 @@ function createMissingDateImplError(provider) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: clock-view.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const CLOCK_RADIUS = 50;
@@ -1545,10 +1832,84 @@ MatClockView.propDecorators = {
     selectedChange: [{ type: Output }],
     changeView: [{ type: Output }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype._activeDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype._selected;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype._minDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype._maxDate;
+    /** @type {?} */
+    MatClockView.prototype.dateFilter;
+    /** @type {?} */
+    MatClockView.prototype.clockStep;
+    /** @type {?} */
+    MatClockView.prototype.twelveHour;
+    /** @type {?} */
+    MatClockView.prototype.hourView;
+    /** @type {?} */
+    MatClockView.prototype.selectedTime;
+    /** @type {?} */
+    MatClockView.prototype.selectedChange;
+    /** @type {?} */
+    MatClockView.prototype.changeView;
+    /** @type {?} */
+    MatClockView.prototype._hours;
+    /** @type {?} */
+    MatClockView.prototype._minutes;
+    /** @type {?} */
+    MatClockView.prototype._selectedHour;
+    /** @type {?} */
+    MatClockView.prototype._selectedMinute;
+    /** @type {?} */
+    MatClockView.prototype._anteMeridian;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype.mouseMoveListener;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype.mouseUpListener;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype._element;
+    /** @type {?} */
+    MatClockView.prototype._dateAdapter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatClockView.prototype._dateFormats;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: datepicker-animations.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const slideCalendar = trigger('slideCalendar', [
@@ -1596,8 +1957,49 @@ const fadeInCalendar = trigger('fadeInCalendar', [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: datepicker-intl.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function MatDatepickerIntlCatalog() { }
+if (false) {
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.calendarLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.openCalendarLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.prevMonthLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.nextMonthLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.prevYearLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.nextYearLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.setToAMLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.setToPMLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.switchToMinuteViewLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.switchToHourViewLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.switchToMonthViewLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.switchToYearViewLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.switchToYearsViewLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.buttonSubmitText;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.buttonSubmitLabel;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.buttonCancelText;
+    /** @type {?} */
+    MatDatepickerIntlCatalog.prototype.buttonCancelLabel;
+}
 /**
  * Datepicker data that requires internationalization.
  */
@@ -1681,11 +2083,105 @@ class MatDatepickerIntl {
 MatDatepickerIntl.decorators = [
     { type: Injectable, args: [{ providedIn: 'root' },] }
 ];
-/** @nocollapse */ MatDatepickerIntl.ngInjectableDef = defineInjectable({ factory: function MatDatepickerIntl_Factory() { return new MatDatepickerIntl(); }, token: MatDatepickerIntl, providedIn: "root" });
+/** @nocollapse */ MatDatepickerIntl.ɵprov = ɵɵdefineInjectable({ factory: function MatDatepickerIntl_Factory() { return new MatDatepickerIntl(); }, token: MatDatepickerIntl, providedIn: "root" });
+if (false) {
+    /**
+     * Stream that emits whenever the labels here are changed. Use this to notify
+     * components if the labels have changed after initialization.
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.changes;
+    /**
+     * A label for the calendar popup (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.calendarLabel;
+    /**
+     * A label for the button used to open the calendar popup (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.openCalendarLabel;
+    /**
+     * A label for the previous month button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.prevMonthLabel;
+    /**
+     * A label for the next month button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.nextMonthLabel;
+    /**
+     * A label for the previous year button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.prevYearLabel;
+    /**
+     * A label for the next year button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.nextYearLabel;
+    /**
+     * A label for the 'AM' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.setToAMLabel;
+    /**
+     * A label for the 'PM' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.setToPMLabel;
+    /**
+     * A label for the 'switch to minute view' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.switchToMinuteViewLabel;
+    /**
+     * A label for the 'switch to hour view' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.switchToHourViewLabel;
+    /**
+     * A label for the 'switch to month view' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.switchToMonthViewLabel;
+    /**
+     * A label for the 'switch to year view' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.switchToYearViewLabel;
+    /**
+     * A label for the 'switch to years view' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.switchToYearsViewLabel;
+    /**
+     * Text for the 'submit' button.
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.buttonSubmitText;
+    /**
+     * A label for the 'submit' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.buttonSubmitLabel;
+    /**
+     * Text for the 'cancel' button.
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.buttonCancelText;
+    /**
+     * A label for the 'cancel' button (used by screen readers).
+     * @type {?}
+     */
+    MatDatepickerIntl.prototype.buttonCancelLabel;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: calendar-body.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * An internal class that represents the data corresponding to a single calendar cell.
@@ -1704,6 +2200,16 @@ class MatCalendarCell {
         this.ariaLabel = ariaLabel;
         this.enabled = enabled;
     }
+}
+if (false) {
+    /** @type {?} */
+    MatCalendarCell.prototype.value;
+    /** @type {?} */
+    MatCalendarCell.prototype.displayValue;
+    /** @type {?} */
+    MatCalendarCell.prototype.ariaLabel;
+    /** @type {?} */
+    MatCalendarCell.prototype.enabled;
 }
 /**
  * An internal component used to display calendar data in a table.
@@ -1827,10 +2333,79 @@ MatCalendarBody.propDecorators = {
     cellAspectRatio: [{ type: Input }],
     selectedValueChange: [{ type: Output }]
 };
+if (false) {
+    /**
+     * The label for the table. (e.g. "Jan 2017").
+     * @type {?}
+     */
+    MatCalendarBody.prototype.label;
+    /**
+     * The cells to display in the table.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.rows;
+    /**
+     * The value in the table that corresponds to today.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.todayValue;
+    /**
+     * The value in the table that is active.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.activeValue;
+    /**
+     * The value in the table that is currently selected.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.selectedValue;
+    /**
+     * The minimum number of free cells needed to fit the label in the first row.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.labelMinRequiredCells;
+    /**
+     * The number of columns in the table.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.numCols;
+    /**
+     * Whether to allow selection of disabled cells.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.allowDisabledSelection;
+    /**
+     * The cell number of the active cell in the table.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.activeCell;
+    /**
+     * The aspect ratio (width / height) to use for the cells in the table. This aspect ratio will be
+     * maintained even as the table resizes.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.cellAspectRatio;
+    /**
+     * Emits when a new value is selected.
+     * @type {?}
+     */
+    MatCalendarBody.prototype.selectedValueChange;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendarBody.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendarBody.prototype._ngZone;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: month-view.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const DAYS_PER_WEEK = 7;
@@ -2172,10 +2747,116 @@ MatMonthView.propDecorators = {
     activeDateChange: [{ type: Output }],
     _matCalendarBody: [{ type: ViewChild, args: [MatCalendarBody,] }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MatMonthView.prototype._activeDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatMonthView.prototype._selected;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatMonthView.prototype._minDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatMonthView.prototype._maxDate;
+    /**
+     * A function used to filter which dates are selectable.
+     * @type {?}
+     */
+    MatMonthView.prototype.dateFilter;
+    /**
+     * Animations handler
+     * @type {?}
+     */
+    MatMonthView.prototype.animationDir;
+    /**
+     * Emits when a new date is selected.
+     * @type {?}
+     */
+    MatMonthView.prototype.selectedChange;
+    /**
+     * Emits when any date is selected.
+     * @type {?}
+     */
+    MatMonthView.prototype._userSelection;
+    /**
+     * Emits when any date is activated.
+     * @type {?}
+     */
+    MatMonthView.prototype.activeDateChange;
+    /**
+     * The body of calendar table
+     * @type {?}
+     */
+    MatMonthView.prototype._matCalendarBody;
+    /**
+     * The label for this month (e.g. "January 2017").
+     * @type {?}
+     */
+    MatMonthView.prototype._monthLabel;
+    /**
+     * Grid of calendar cells representing the dates of the month.
+     * @type {?}
+     */
+    MatMonthView.prototype._weeks;
+    /**
+     * The number of blank cells in the first row before the 1st of the month.
+     * @type {?}
+     */
+    MatMonthView.prototype._firstWeekOffset;
+    /**
+     * The active date on the calendar.
+     * @type {?}
+     */
+    MatMonthView.prototype._activeValue;
+    /**
+     * The date of the month that the currently selected Date falls on.
+     * Null if the currently selected Date is in another month.
+     * @type {?}
+     */
+    MatMonthView.prototype._selectedDate;
+    /**
+     * The date of the month that today falls on. Null if today is in another month.
+     * @type {?}
+     */
+    MatMonthView.prototype._todayDate;
+    /**
+     * The names of the weekdays.
+     * @type {?}
+     */
+    MatMonthView.prototype._weekdays;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatMonthView.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatMonthView.prototype._dateFormats;
+    /** @type {?} */
+    MatMonthView.prototype._dateAdapter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatMonthView.prototype._dir;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: year-view.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * An internal component used to display a single year in the datepicker.
@@ -2516,10 +3197,96 @@ MatYearView.propDecorators = {
     activeDateChange: [{ type: Output }],
     _matCalendarBody: [{ type: ViewChild, args: [MatCalendarBody,] }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearView.prototype._activeDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearView.prototype._selected;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearView.prototype._minDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearView.prototype._maxDate;
+    /**
+     * A function used to filter which dates are selectable.
+     * @type {?}
+     */
+    MatYearView.prototype.dateFilter;
+    /**
+     * Animations handler
+     * @type {?}
+     */
+    MatYearView.prototype.animationDir;
+    /**
+     * Emits when a new month is selected.
+     * @type {?}
+     */
+    MatYearView.prototype.selectedChange;
+    /**
+     * Emits when any date is activated.
+     * @type {?}
+     */
+    MatYearView.prototype.activeDateChange;
+    /**
+     * The body of calendar table
+     * @type {?}
+     */
+    MatYearView.prototype._matCalendarBody;
+    /**
+     * Grid of calendar cells representing the months of the year.
+     * @type {?}
+     */
+    MatYearView.prototype._months;
+    /**
+     * The label for this year (e.g. "2017").
+     * @type {?}
+     */
+    MatYearView.prototype._yearLabel;
+    /**
+     * The month in this year that today falls on. Null if today is in a different year.
+     * @type {?}
+     */
+    MatYearView.prototype._todayMonth;
+    /**
+     * The month in this year that the selected Date falls on.
+     * Null if the selected Date is in a different year.
+     * @type {?}
+     */
+    MatYearView.prototype._selectedMonth;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearView.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearView.prototype._dateFormats;
+    /** @type {?} */
+    MatYearView.prototype._dateAdapter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearView.prototype._dir;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: years-view.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const YEAR_LINE_HEIGHT = 35;
@@ -2823,10 +3590,75 @@ MatYearsView.propDecorators = {
     dateFilter: [{ type: Input }],
     selectedChange: [{ type: Output }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearsView.prototype._activeDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearsView.prototype._selected;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearsView.prototype._minDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearsView.prototype._maxDate;
+    /**
+     * A function used to filter which dates are selectable.
+     * @type {?}
+     */
+    MatYearsView.prototype.dateFilter;
+    /**
+     * Emits when a new month is selected.
+     * @type {?}
+     */
+    MatYearsView.prototype.selectedChange;
+    /**
+     * List of years.
+     * @type {?}
+     */
+    MatYearsView.prototype._years;
+    /**
+     * The selected year.
+     * @type {?}
+     */
+    MatYearsView.prototype._selectedYear;
+    /**
+     * Scroller subscription.
+     * @type {?}
+     */
+    MatYearsView.prototype._disposeScroller;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearsView.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearsView.prototype.element;
+    /** @type {?} */
+    MatYearsView.prototype._dateAdapter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatYearsView.prototype._dateFormats;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: calendar.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * A calendar that is used as part of the datepicker.
@@ -3329,10 +4161,188 @@ MatCalendar.propDecorators = {
     yearView: [{ type: ViewChild, args: [MatYearView,] }],
     yearsView: [{ type: ViewChild, args: [MatYearsView,] }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._intlChanges;
+    /**
+     * Used for scheduling that focus should be moved to the active cell on the next tick.
+     * We need to schedule it, rather than do it immediately, because we have to wait
+     * for Angular to re-evaluate the view children.
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._moveFocusOnNextTick;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._startAt;
+    /**
+     * The type of value handled by the calendar.
+     * @type {?}
+     */
+    MatCalendar.prototype.type;
+    /**
+     * Which view the calendar should be started in.
+     * @type {?}
+     */
+    MatCalendar.prototype.startView;
+    /**
+     * Current calendar view
+     * @type {?}
+     */
+    MatCalendar.prototype.view;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._selected;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._minDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._maxDate;
+    /**
+     * A function used to filter which dates are selectable.
+     * @type {?}
+     */
+    MatCalendar.prototype.dateFilter;
+    /**
+     * Clock interval
+     * @type {?}
+     */
+    MatCalendar.prototype.clockStep;
+    /**
+     * Clock hour format
+     * @type {?}
+     */
+    MatCalendar.prototype.twelveHour;
+    /**
+     * Emits when the currently selected date changes.
+     * @type {?}
+     */
+    MatCalendar.prototype.selectedChange;
+    /**
+     * Emits when any date is selected.
+     * @type {?}
+     */
+    MatCalendar.prototype._userSelection;
+    /**
+     * Reference to the current clock view component.
+     * @type {?}
+     */
+    MatCalendar.prototype.clockView;
+    /**
+     * Reference to the current month view component.
+     * @type {?}
+     */
+    MatCalendar.prototype.monthView;
+    /**
+     * Reference to the current year view component.
+     * @type {?}
+     */
+    MatCalendar.prototype.yearView;
+    /**
+     * Reference to the current years view component.
+     * @type {?}
+     */
+    MatCalendar.prototype.yearsView;
+    /**
+     * Date filter for the month and year views.
+     * @type {?}
+     */
+    MatCalendar.prototype._dateFilterForViews;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._clampedActiveDate;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._currentView;
+    /**
+     * Emits whenever there is a state change that the header may need to respond to.
+     * @type {?}
+     */
+    MatCalendar.prototype.stateChanges;
+    /**
+     * Animations handler
+     * @type {?}
+     */
+    MatCalendar.prototype._animationDir;
+    /**
+     * Whether the active date is AM or not
+     * @type {?}
+     */
+    MatCalendar.prototype._isAm;
+    /**
+     * Whether the calendar process the time.
+     * @type {?}
+     */
+    MatCalendar.prototype._hasTime;
+    /**
+     * Whether the calendar is in hour view.
+     * @type {?}
+     */
+    MatCalendar.prototype._hourView;
+    /**
+     * The label for the calendar header buttons.
+     * @type {?}
+     */
+    MatCalendar.prototype._yearButtonText;
+    /** @type {?} */
+    MatCalendar.prototype._dayButtonText;
+    /** @type {?} */
+    MatCalendar.prototype._monthdayButtonText;
+    /** @type {?} */
+    MatCalendar.prototype._hourButtonText;
+    /** @type {?} */
+    MatCalendar.prototype._minuteButtonText;
+    /**
+     * The label for the current calendar view.
+     * @type {?}
+     */
+    MatCalendar.prototype._periodButtonText;
+    /** @type {?} */
+    MatCalendar.prototype._periodButtonLabel;
+    /**
+     * The label for the the previous button.
+     * @type {?}
+     */
+    MatCalendar.prototype._prevButtonLabel;
+    /**
+     * The label for the the next button.
+     * @type {?}
+     */
+    MatCalendar.prototype._nextButtonLabel;
+    /** @type {?} */
+    MatCalendar.prototype._intl;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._dateAdapter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatCalendar.prototype._dateFormats;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: datepicker.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * Used to generate a unique ID for each datepicker instance.
@@ -3413,6 +4423,23 @@ MatDatepickerContent.decorators = [
 MatDatepickerContent.propDecorators = {
     _calendar: [{ type: ViewChild, args: [MatCalendar,] }]
 };
+if (false) {
+    /**
+     * Reference to the internal calendar component.
+     * @type {?}
+     */
+    MatDatepickerContent.prototype._calendar;
+    /**
+     * Reference to the datepicker that created the overlay.
+     * @type {?}
+     */
+    MatDatepickerContent.prototype.datepicker;
+    /**
+     * Whether the datepicker is above or below the input.
+     * @type {?}
+     */
+    MatDatepickerContent.prototype._isAbove;
+}
 // TODO(mmalerba): We use a component instead of a directive here so the user can use implicit
 // template reference variables (e.g. #d vs #d="matDatepicker"). We can change this to a directive
 // if angular adds support for `exportAs: '$implicit'` on directives.
@@ -3913,10 +4940,167 @@ MatDatepicker.propDecorators = {
     closedStream: [{ type: Output, args: ['closed',] }],
     opened: [{ type: Input }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._startAt;
+    /**
+     * The type of value handled by the calendar.
+     * @type {?}
+     */
+    MatDatepicker.prototype.type;
+    /**
+     * Which view the calendar should be started in.
+     * @type {?}
+     */
+    MatDatepicker.prototype.startView;
+    /**
+     * Clock interval
+     * @type {?}
+     */
+    MatDatepicker.prototype.clockStep;
+    /**
+     * Clock hour format
+     * @type {?}
+     */
+    MatDatepicker.prototype.twelveHour;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._touchUi;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._disabled;
+    /** @type {?} */
+    MatDatepicker.prototype._datepicker;
+    /**
+     * Classes to be passed to the date picker panel. Supports the same syntax as `ngClass`.
+     * @type {?}
+     */
+    MatDatepicker.prototype.panelClass;
+    /**
+     * Emits when the datepicker has been opened.
+     * @type {?}
+     */
+    MatDatepicker.prototype.openedStream;
+    /**
+     * Emits when the datepicker has been closed.
+     * @type {?}
+     */
+    MatDatepicker.prototype.closedStream;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._opened;
+    /**
+     * The id for the datepicker calendar.
+     * @type {?}
+     */
+    MatDatepicker.prototype.id;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._validSelected;
+    /**
+     * A reference to the overlay when the calendar is opened as a popup.
+     * @type {?}
+     */
+    MatDatepicker.prototype._popupRef;
+    /**
+     * A reference to the dialog when the calendar is opened as a dialog.
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._dialogRef;
+    /**
+     * A portal containing the calendar for this datepicker.
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._calendarPortal;
+    /**
+     * Reference to the component instantiated in popup mode.
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._popupComponentRef;
+    /**
+     * The element that was focused before the datepicker was opened.
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._focusedElementBeforeOpen;
+    /**
+     * Subscription to value changes in the associated input element.
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._inputSubscription;
+    /**
+     * The input element this datepicker is associated with.
+     * @type {?}
+     */
+    MatDatepicker.prototype._datepickerInput;
+    /**
+     * Emits when the datepicker is disabled.
+     * @type {?}
+     */
+    MatDatepicker.prototype._disabledChange;
+    /**
+     * Emits new selected date when selected date changes.
+     * @type {?}
+     */
+    MatDatepicker.prototype._selectedChanged;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._dialog;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._overlay;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._ngZone;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._viewContainerRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._scrollStrategy;
+    /** @type {?} */
+    MatDatepicker.prototype._dateAdapter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._dir;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepicker.prototype._document;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: datepicker-input.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const MAT_DATEPICKER_VALUE_ACCESSOR = {
@@ -3952,6 +5136,23 @@ class MatDatepickerInputEvent {
         this.targetElement = targetElement;
         this.value = this.target.value;
     }
+}
+if (false) {
+    /**
+     * The new value for the target datepicker input.
+     * @type {?}
+     */
+    MatDatepickerInputEvent.prototype.value;
+    /**
+     * Reference to the datepicker input component that emitted the event.
+     * @type {?}
+     */
+    MatDatepickerInputEvent.prototype.target;
+    /**
+     * Reference to the native input element associated with the datepicker input.
+     * @type {?}
+     */
+    MatDatepickerInputEvent.prototype.targetElement;
 }
 /**
  * Directive used to connect an input to a MatDatepicker.
@@ -4394,10 +5595,137 @@ MatDatepickerInput.propDecorators = {
     dateChange: [{ type: Output }],
     dateInput: [{ type: Output }]
 };
+if (false) {
+    /** @type {?} */
+    MatDatepickerInput.prototype._datepicker;
+    /** @type {?} */
+    MatDatepickerInput.prototype._dateFilter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._value;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._firstValue;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._min;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._max;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._disabled;
+    /**
+     * Emits when a `change` event is fired on this `<input>`.
+     * @type {?}
+     */
+    MatDatepickerInput.prototype.dateChange;
+    /**
+     * Emits when an `input` event is fired on this `<input>`.
+     * @type {?}
+     */
+    MatDatepickerInput.prototype.dateInput;
+    /**
+     * Emits when the value changes (either due to user input or programmatic change).
+     * @type {?}
+     */
+    MatDatepickerInput.prototype._valueChange;
+    /**
+     * Emits when the disabled state has changed
+     * @type {?}
+     */
+    MatDatepickerInput.prototype._disabledChange;
+    /** @type {?} */
+    MatDatepickerInput.prototype._onTouched;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._cvaOnChange;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._validatorOnChange;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._datepickerSubscription;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._localeSubscription;
+    /**
+     * The form control validator for whether the input parses.
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._parseValidator;
+    /**
+     * The form control validator for the min date.
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._minValidator;
+    /**
+     * The form control validator for the max date.
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._maxValidator;
+    /**
+     * The form control validator for the date filter.
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._filterValidator;
+    /**
+     * The combined form control validator for this input.
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._validator;
+    /**
+     * Whether the last value set on the input was valid.
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._lastValueValid;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._elementRef;
+    /** @type {?} */
+    MatDatepickerInput.prototype._dateAdapter;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._dateFormats;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerInput.prototype._formField;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: datepicker-toggle.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * Can be used to override the icon of a `matDatepickerToggle`.
@@ -4514,10 +5842,40 @@ MatDatepickerToggle.propDecorators = {
     disabled: [{ type: Input }],
     _customIcon: [{ type: ContentChild, args: [MatDatepickerToggleIcon,] }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerToggle.prototype._stateChanges;
+    /**
+     * Datepicker instance that the button will toggle.
+     * @type {?}
+     */
+    MatDatepickerToggle.prototype.datepicker;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerToggle.prototype._disabled;
+    /**
+     * Custom icon set by the consumer.
+     * @type {?}
+     */
+    MatDatepickerToggle.prototype._customIcon;
+    /** @type {?} */
+    MatDatepickerToggle.prototype._intl;
+    /**
+     * @type {?}
+     * @private
+     */
+    MatDatepickerToggle.prototype._changeDetectorRef;
+}
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: datepicker-module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class MatDatepickerModule {
 }
@@ -4564,12 +5922,14 @@ MatDatepickerModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: martindalec-datepicker.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { CLOCK_INNER_RADIUS, CLOCK_OUTER_RADIUS, CLOCK_RADIUS, CLOCK_TICK_RADIUS, DateAdapter, MAT_DATEPICKER_SCROLL_STRATEGY, MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY, MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER, MAT_DATEPICKER_VALIDATORS, MAT_DATEPICKER_VALUE_ACCESSOR, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MAT_DATE_LOCALE_FACTORY, MAT_DATE_LOCALE_PROVIDER, MAT_MOMENT_DATE_FORMATS, MAT_NATIVE_DATE_FORMATS, MatCalendar, MatCalendarBody, MatCalendarCell, MatClockView, MatDatepicker, MatDatepickerContent, MatDatepickerInput, MatDatepickerInputEvent, MatDatepickerIntl, MatDatepickerModule, MatDatepickerToggle, MatDatepickerToggleIcon, MatMomentDateModule, MatMonthView, MatNativeDateModule, MatYearView, MatYearsView, MomentDateAdapter, MomentDateModule, NativeDateAdapter, NativeDateModule, slideCalendar as ɵa, controlActive as ɵb, transformPanel as ɵc, fadeInCalendar as ɵd };
